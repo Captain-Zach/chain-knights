@@ -56,7 +56,6 @@ class FFA extends Phaser.Scene {
         this.puppetList = [];
         if(game_state.player == 1){
             this.player = this.physics.add.sprite(64, 64, "edge_down")
-            // this.player.setOrigin(0);
             this.controller = this.input.keyboard.createCursorKeys();
             this.player.setCollideWorldBounds(true);
             this.player.direction = "right";
@@ -67,16 +66,14 @@ class FFA extends Phaser.Scene {
             this.puppetList.push(this.puppet2);
         }else if(game_state.player == 2){
             this.player = this.physics.add.sprite(800 - 64, 64, "bev")
-            // this.player.setOrigin(0);
             this.controller = this.input.keyboard.createCursorKeys();
             this.player.setCollideWorldBounds(true);
-            this.player.direction = "right";
+            this.player.direction = "left";
+            // Create Puppets for other players
             this.puppet1 = new Puppet(this, 64, 64, "edge_down", 2);
             this.puppet2 = new Puppet(this, -100, -100, "bev_down", 2);
             this.puppetList.push(this.puppet1);
             this.puppetList.push(this.puppet2);
-            // this.puppet1 = new Puppet(this, 64, 64, "edge_down", 2);
-            // this.puppet1 = new Puppet(this, 64, 64, "edge_down", 2);
         }
         this.spacebar = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
         this.remove = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.R);

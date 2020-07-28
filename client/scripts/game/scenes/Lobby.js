@@ -38,7 +38,7 @@ class Lobby extends Phaser.Scene {
     }
 
     connectToServer() {
-        ws = new WebSocket("ws://localhost:8080");
+        ws = new WebSocket("ws://40.113.233.8:80");
         console.log("WTH")
         startRTCListener(ws);
         ws.onmessage = message => {
