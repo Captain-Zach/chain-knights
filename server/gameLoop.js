@@ -203,3 +203,8 @@ function block_up(x, y){
         }));
     }
 }
+
+setTimeout(() => {
+    console.log("goodbye");
+    process.kill();
+}, 300000)
