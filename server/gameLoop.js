@@ -206,5 +206,5 @@ function block_up(x, y){
 
 setTimeout(() => {
     console.log("goodbye");
-    process.kill();
+    process.kill(process.pid);
 }, 300000)
